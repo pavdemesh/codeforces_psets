@@ -10,7 +10,8 @@ is_vertical = False
 
 for row in range(m_height):
     temp_n = n_length
-    while True:
+    # while True:
+    while temp_n > 0:
         if temp_n >= 2:
             temp_n -= 2
             count_dominos += 1
@@ -20,14 +21,14 @@ for row in range(m_height):
             count_dominos += 1
             is_vertical = True
             # print(f"row is {row} and n_temp is {temp_n} and using branch 2")
-            break
+            # break
         elif temp_n == 1 and is_vertical:
             temp_n -= 2
             is_vertical = False
             # print(f"row is {row} and n_temp is {temp_n} and using branch 3")
-            break
+        #     break
         else:
             # print(f"row is {row} and n_temp is {temp_n} and using branch 4")
-            break
+            temp_n -= 2
+            # break
 print(count_dominos)
-
